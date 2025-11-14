@@ -104,6 +104,7 @@
 
         /* 2. Hero Section */
         #hero {
+            /* Mantenho o placeholder por segurança, mas aqui deve ir sua imagem real */
             background: linear-gradient(rgba(106, 13, 173, 0.7), rgba(64, 224, 208, 0.7)), url('https://via.placeholder.com/1600x600?text=Cuidado+Home+Care+Profissional') no-repeat center center/cover;
             color: var(--branco);
             padding: 100px 0;
@@ -355,25 +356,36 @@
     <section id="contato">
         <div class="container">
             <h2>Solicite Seu Orçamento</h2>
-            <form class="form-contato" action="#" method="POST">
+            
+            <form class="form-contato" action="https://formsubmit.co/gustavohenrique07122005@gmail.com" method="POST">
+                
+                <input type="hidden" name="_next" value="https://meizinha20.github.io/obrigado.html">
+                <input type="hidden" name="_subject" value="Nova Solicitação de Orçamento - Parenti Saúde">
+                <input type="hidden" name="_captcha" value="false">
+
                 <div class="form-group">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="Nome Completo" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="Email do Cliente" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="telefone">Telefone (WhatsApp)</label>
-                    <input type="tel" id="telefone" name="telefone" required>
+                    <input type="tel" id="telefone" name="Telefone" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="mensagem">Mensagem / Tipo de Cuidado Necessário</label>
-                    <textarea id="mensagem" name="mensagem" required></textarea>
+                    <textarea id="mensagem" name="Cuidado Necessário" required></textarea>
                 </div>
+                
                 <button type="submit" class="btn-submit">Enviar Solicitação</button>
             </form>
+            
         </div>
     </section>
 
