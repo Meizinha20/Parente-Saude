@@ -186,8 +186,69 @@
             margin: 0 auto;
             color: var(--grafite-claro);
         }
+        
+        /* NOVO ESTILO: 5. Avaliações/Depoimentos */
+        #avaliacoes {
+            padding: 80px 0;
+            background-color: var(--fundo-claro); /* Fundo cinza claro */
+            text-align: center;
+        }
 
-        /* 5. Contato */
+        #avaliacoes h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: var(--roxo-principal);
+        }
+
+        .avaliacoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .depoimento-card {
+            background: var(--branco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: left;
+            transition: transform 0.3s;
+            border-top: 5px solid var(--verde-agua); /* Destaque em verde-água */
+        }
+
+        .depoimento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .depoimento-card i.fa-quote-left {
+            font-size: 1.5em;
+            color: var(--roxo-principal);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .depoimento-card p {
+            font-style: italic;
+            font-size: 1.05em;
+            color: var(--grafite-escuro);
+            margin-bottom: 15px;
+        }
+
+        .autor p {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--grafite-escuro);
+            margin-top: 5px;
+        }
+
+        .autor i.fa-star, .autor i.fa-star-half-alt {
+            color: #FFD700; /* Estrelas amarelas */
+            font-size: 1.1em;
+            margin-right: 2px;
+        }
+        
+        /* 6. Contato */
         #contato {
             padding: 80px 0;
             background-color: var(--roxo-principal);
@@ -292,6 +353,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#avaliacoes">Avaliações</a></li> 
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -353,6 +415,41 @@
         </div>
     </section>
 
+    <section id="avaliacoes">
+        <div class="container">
+            <h2>O que nossos clientes dizem</h2>
+            <div class="avaliacoes-grid">
+                
+                <div class="depoimento-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"O carinho e profissionalismo da equipe Parenti Saúde foram essenciais na recuperação da minha mãe. O cuidado é realmente humano."</p>
+                    <div class="autor">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <p>— **Ana Lúcia R.** (Filha de Paciente)</p>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Toda a equipe, da enfermagem à fisioterapia, demonstrou um alto nível de competência. Recomendo os serviços para quem busca excelência."</p>
+                    <div class="autor">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <p>— **Dr. Pedro S.** (Médico)</p>
+                    </div>
+                </div>
+                
+                <div class="depoimento-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"Sentimo-nos seguros e amparados desde o primeiro contato. Receber cuidados de alta qualidade no conforto de casa fez toda a diferença."</p>
+                    <div class="autor">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <p>— **Família Oliveira**</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
     <section id="contato">
         <div class="container">
             <h2>Solicite Seu Orçamento</h2>
@@ -397,3 +494,4 @@
 
 </body>
 </html>
+```
