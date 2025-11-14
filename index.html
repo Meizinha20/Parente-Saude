@@ -30,6 +30,7 @@
             color: var(--grafite-escuro);
             line-height: 1.6;
             background-color: var(--branco);
+            overflow-x: hidden; /* Evita scroll horizontal quando o menu lateral está aberto */
         }
 
         h1, h2, h3 {
@@ -59,13 +60,25 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--roxo-principal);
-            text-decoration: none;
+        /* ESTILOS PARA O LOGO DE IMAGEM */
+        /* Oculta o logo de texto, caso ele ainda apareça em algum lugar */
+        .logo { 
+            display: none;
         }
 
+        /* Ajuste para o logo de imagem */
+        .logo-img img {
+            height: 40px; /* Altura da imagem do logo */
+            width: auto; /* Mantém a proporção da imagem */
+            vertical-align: middle; /* Alinha verticalmente */
+        }
+        /* FIM ESTILOS LOGO IMAGEM */
+
+
+        /* Estilos de Navegação (Desktop) */
+        nav {
+            display: block; /* Padrão para desktop */
+        }
         nav ul {
             list-style: none;
             display: flex;
@@ -86,7 +99,7 @@
             color: var(--roxo-principal);
         }
         
-        /* Botão CTA Principal */
+        /* Botão CTA Principal do Header */
         .btn-cta {
             background-color: var(--roxo-principal);
             color: var(--branco);
@@ -102,9 +115,69 @@
             background-color: #550099; /* Tom mais escuro do roxo */
         }
 
+        /* Ícone do menu hambúrguer - visível apenas em mobile */
+        .hamburger-menu {
+            display: none; /* Escondido por padrão no desktop */
+            font-size: 1.8em;
+            color: var(--roxo-principal);
+            cursor: pointer;
+            z-index: 1100; /* Acima do menu lateral */
+        }
+
+        /* Menu Lateral (Off-canvas) */
+        .sidenav {
+            height: 100%;
+            width: 0; /* Largura inicial zero para estar escondido */
+            position: fixed;
+            z-index: 1050; /* Acima do conteúdo, abaixo do ícone do hambúrguer */
+            top: 0;
+            left: 0;
+            background-color: var(--roxo-principal);
+            overflow-x: hidden;
+            transition: 0.5s; /* Animação para abrir/fechar */
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--branco);
+            display: block;
+            transition: 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .sidenav a:hover {
+            color: var(--verde-agua);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            color: var(--branco);
+        }
+
+        /* Botão CTA dentro do menu lateral (visível só em mobile) */
+        .sidenav .btn-cta-mobile {
+            display: none; /* Escondido por padrão */
+            margin: 30px 32px;
+            width: calc(100% - 64px); /* Ajusta a largura */
+            text-align: center;
+            padding: 15px;
+            font-size: 1.1em;
+            background-color: var(--verde-agua);
+            color: var(--grafite-escuro);
+        }
+
         /* 2. Hero Section */
         #hero {
-            /* Mantenho o placeholder por segurança, mas aqui deve ir sua imagem real */
             background: linear-gradient(rgba(106, 13, 173, 0.7), rgba(64, 224, 208, 0.7)), url('https://via.placeholder.com/1600x600?text=Cuidado+Home+Care+Profissional') no-repeat center center/cover;
             color: var(--branco);
             padding: 100px 0;
@@ -326,71 +399,85 @@
         /* ==================================== */
         @media (max-width: 768px) {
             
-            /* 1. Header e Navbar (Melhorias para empilhamento vertical) */
-            .navbar {
-                flex-direction: column; 
+            /* Mostra o ícone de hambúrguer e esconde o menu padrão */
+            nav {
+                display: none; /* Esconde o menu de navegação padrão */
+            }
+            .hamburger-menu {
+                display: block; /* Mostra o ícone de hambúrguer */
+            }
+            .btn-cta {
+                display: none; /* Esconde o botão CTA do header */
+            }
+            /* Mostra o botão CTA dentro do menu lateral em mobile */
+            .sidenav .btn-cta-mobile {
+                display: inline-block; 
+            }
+
+            /* Ajustes do Header para mobile */
+            header .navbar {
+                justify-content: space-between; /* Mantém logo e hambúrguer nas pontas */
                 align-items: center;
-                padding: 10px 0;
+                flex-direction: row; /* Volta a ser linha para logo e hambúrguer */
             }
-            .logo {
-                margin-bottom: 10px;
+            header .logo-img img { 
+                height: 35px; /* Ligeiramente menor para mobile */
             }
-            nav ul {
-                padding: 10px 0 5px;
-                flex-direction: column;
-                text-align: center;
-                width: 100%;
-            }
-            nav ul li {
-                margin: 5px 0;
-            }
-            nav ul li a {
-                padding: 5px 0;
-                display: block;
-            }
-            /* Oculta o botão CTA do header para não poluir o menu vertical */
-            header .btn-cta {
-                display: none; 
-            }
-            
-            /* 2. Hero Section */
+
+
+            /* Hero Section */
             #hero {
                 padding: 60px 20px; 
             }
             #hero h1 {
-                font-size: 2.2em; /* Reduz o tamanho do título principal */
+                font-size: 2.2em; 
             }
             #hero p {
                 font-size: 1em;
             }
             
-            /* 3. Seções Gerais e Títulos */
+            /* Seções Gerais e Títulos */
             #servicos, #sobre, #avaliacoes, #contato {
-                padding: 50px 0; /* Diminui o padding de todas as seções */
+                padding: 50px 0; 
             }
             h2 {
-                font-size: 2em !important; /* Reduz títulos de seção */
+                font-size: 2em !important; 
                 margin-bottom: 30px !important;
             }
             
-            /* 4. Serviços e Avaliações (Grid em Coluna Única) */
+            /* Serviços e Avaliações (Grid em Coluna Única) */
             .servicos-grid,
             .avaliacoes-grid {
-                grid-template-columns: 1fr; /* Força uma coluna única */
+                grid-template-columns: 1fr; 
             }
             
-            /* 5. Contato */
+            /* Contato */
             .form-contato {
-                padding: 30px 20px; /* Diminui o padding do formulário */
+                padding: 30px 20px; 
             }
         }
     </style>
 </head>
 <body>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#hero" onclick="closeNav()">Home</a>
+        <a href="#servicos" onclick="closeNav()">Serviços</a>
+        <a href="#sobre" onclick="closeNav()">Sobre Nós</a>
+        <a href="#avaliacoes" onclick="closeNav()">Avaliações</a>
+        <a href="#contato" onclick="closeNav()">Contato</a>
+        <a href="#contato" class="btn-cta btn-cta-mobile" onclick="closeNav()">(24h) Fale Conosco</a>
+    </div>
+
     <header>
         <div class="container navbar">
-            <a href="#" class="logo">Parenti Saúde</a>
+            <a href="#" class="logo-img">
+                <img src="images/logo-parenti.png" alt="Parenti Saúde Logo">
+            </a>
+            
+            <span class="hamburger-menu" onclick="openNav()">&#9776;</span>
+
             <nav>
                 <ul>
                     <li><a href="#hero">Home</a></li>
@@ -535,6 +622,25 @@
             <p>&copy; 2024 Parenti Saúde Home Care. Todos os direitos reservados. | Cuidado com Confiança e Acolhimento.</p>
         </div>
     </footer>
+
+    <script>
+        function openNav() {
+            // Define a largura para 250px para mostrar o menu
+            document.getElementById("mySidenav").style.width = "250px"; 
+        }
+
+        function closeNav() {
+            // Define a largura para 0 para esconder o menu
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // Fecha o menu lateral quando um link é clicado (para navegação)
+        document.querySelectorAll('.sidenav a').forEach(item => {
+            item.addEventListener('click', event => {
+                closeNav();
+            });
+        });
+    </script>
 
 </body>
 </html>
