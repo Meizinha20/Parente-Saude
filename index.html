@@ -30,7 +30,7 @@
             color: var(--grafite-escuro);
             line-height: 1.6;
             background-color: var(--branco);
-            overflow-x: hidden; /* Evita scroll horizontal quando o menu lateral está aberto */
+            overflow-x: hidden; 
         }
 
         h1, h2, h3 {
@@ -60,34 +60,18 @@
             align-items: center;
         }
 
-        /* ESTILOS PARA O LOGO DE IMAGEM */
-        /* Oculta o logo de texto, caso ele ainda apareça em algum lugar */
-        .logo { 
-            display: none;
-        }
-
-        /* Ajuste para o logo de imagem */
+        /* LOGO DE IMAGEM */
+        .logo { display: none; }
         .logo-img img {
-            height: 40px; /* Altura da imagem do logo */
-            width: auto; /* Mantém a proporção da imagem */
-            vertical-align: middle; /* Alinha verticalmente */
+            height: 40px; 
+            width: auto;
+            vertical-align: middle;
         }
-        /* FIM ESTILOS LOGO IMAGEM */
-
 
         /* Estilos de Navegação (Desktop) */
-        nav {
-            display: block; /* Padrão para desktop */
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 25px;
-        }
-
+        nav { display: block; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 25px; }
         nav ul li a {
             text-decoration: none;
             color: var(--grafite-claro);
@@ -95,9 +79,7 @@
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--roxo-principal);
-        }
+        nav ul li a:hover { color: var(--roxo-principal); }
         
         /* Botão CTA Principal do Header */
         .btn-cta {
@@ -111,30 +93,28 @@
             display: inline-block;
         }
 
-        .btn-cta:hover {
-            background-color: #550099; /* Tom mais escuro do roxo */
-        }
+        .btn-cta:hover { background-color: #550099; }
 
         /* Ícone do menu hambúrguer - visível apenas em mobile */
         .hamburger-menu {
-            display: none; /* Escondido por padrão no desktop */
+            display: none; 
             font-size: 1.8em;
             color: var(--roxo-principal);
             cursor: pointer;
-            z-index: 1100; /* Acima do menu lateral */
+            z-index: 1100;
         }
 
         /* Menu Lateral (Off-canvas) */
         .sidenav {
             height: 100%;
-            width: 0; /* Largura inicial zero para estar escondido */
+            width: 0; 
             position: fixed;
-            z-index: 1050; /* Acima do conteúdo, abaixo do ícone do hambúrguer */
+            z-index: 1050; 
             top: 0;
             left: 0;
             background-color: var(--roxo-principal);
             overflow-x: hidden;
-            transition: 0.5s; /* Animação para abrir/fechar */
+            transition: 0.5s; 
             padding-top: 60px;
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
         }
@@ -166,14 +146,36 @@
 
         /* Botão CTA dentro do menu lateral (visível só em mobile) */
         .sidenav .btn-cta-mobile {
-            display: none; /* Escondido por padrão */
+            display: none; 
             margin: 30px 32px;
-            width: calc(100% - 64px); /* Ajusta a largura */
+            width: calc(100% - 64px); 
             text-align: center;
             padding: 15px;
             font-size: 1.1em;
             background-color: var(--verde-agua);
             color: var(--grafite-escuro);
+        }
+        
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366; 
+            color: var(--branco);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px; 
+            z-index: 1000; 
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
         }
 
         /* 2. Hero Section */
@@ -184,31 +186,12 @@
             text-align: center;
         }
 
-        #hero h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: var(--branco);
-        }
-
-        #hero p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        #hero h1 { font-size: 3em; margin-bottom: 10px; color: var(--branco); }
+        #hero p { font-size: 1.2em; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
 
         /* 3. Seção de Serviços */
-        #servicos {
-            padding: 80px 0;
-            background-color: var(--fundo-claro);
-            text-align: center;
-        }
-
-        #servicos h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-        }
+        #servicos { padding: 80px 0; background-color: var(--fundo-claro); text-align: center; }
+        #servicos h2 { font-size: 2.5em; margin-bottom: 50px; }
 
         .servicos-grid {
             display: grid;
@@ -224,54 +207,18 @@
             text-align: center;
             transition: transform 0.3s;
         }
-
-        .servico-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .servico-card i {
-            font-size: 2.5em;
-            color: var(--verde-agua);
-            margin-bottom: 15px;
-        }
-
-        .servico-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: var(--grafite-escuro);
-        }
+        .servico-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
+        .servico-card i { font-size: 2.5em; color: var(--verde-agua); margin-bottom: 15px; }
+        .servico-card h3 { font-size: 1.2em; margin-bottom: 10px; color: var(--grafite-escuro); }
 
         /* 4. Sobre Nós */
-        #sobre {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        #sobre h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
-        
-        #sobre p {
-            font-size: 1.1em;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--grafite-claro);
-        }
+        #sobre { padding: 80px 0; text-align: center; }
+        #sobre h2 { font-size: 2.5em; margin-bottom: 30px; }
+        #sobre p { font-size: 1.1em; max-width: 800px; margin: 0 auto; color: var(--grafite-claro); }
         
         /* 5. Avaliações/Depoimentos */
-        #avaliacoes {
-            padding: 80px 0;
-            background-color: var(--fundo-claro); 
-            text-align: center;
-        }
-
-        #avaliacoes h2 {
-            font-size: 2.5em;
-            margin-bottom: 50px;
-            color: var(--roxo-principal);
-        }
+        #avaliacoes { padding: 80px 0; background-color: var(--fundo-claro); text-align: center; }
+        #avaliacoes h2 { font-size: 2.5em; margin-bottom: 50px; color: var(--roxo-principal); }
 
         .avaliacoes-grid {
             display: grid;
@@ -289,37 +236,11 @@
             border-top: 5px solid var(--verde-agua); 
         }
 
-        .depoimento-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+        .depoimento-card i.fa-quote-left { font-size: 1.5em; color: var(--roxo-principal); margin-bottom: 15px; display: block; }
+        .depoimento-card p { font-style: italic; font-size: 1.05em; color: var(--grafite-escuro); margin-bottom: 15px; }
 
-        .depoimento-card i.fa-quote-left {
-            font-size: 1.5em;
-            color: var(--roxo-principal);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .depoimento-card p {
-            font-style: italic;
-            font-size: 1.05em;
-            color: var(--grafite-escuro);
-            margin-bottom: 15px;
-        }
-
-        .autor p {
-            font-style: normal;
-            font-weight: 600;
-            color: var(--grafite-escuro);
-            margin-top: 5px;
-        }
-
-        .autor i.fa-star, .autor i.fa-star-half-alt {
-            color: #FFD700; /* Estrelas amarelas */
-            font-size: 1.1em;
-            margin-right: 2px;
-        }
+        .autor p { font-style: normal; font-weight: 600; color: var(--grafite-escuro); margin-top: 5px; }
+        .autor i.fa-star, .autor i.fa-star-half-alt { color: #FFD700; font-size: 1.1em; margin-right: 2px; }
         
         /* 6. Contato */
         #contato {
@@ -329,11 +250,7 @@
             text-align: center;
         }
 
-        #contato h2 {
-            color: var(--verde-agua);
-            font-size: 2.5em;
-            margin-bottom: 30px;
-        }
+        #contato h2 { color: var(--verde-agua); font-size: 2.5em; margin-bottom: 30px; }
 
         .form-contato {
             background: var(--branco);
@@ -345,17 +262,8 @@
             color: var(--grafite-escuro);
             text-align: left;
         }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
@@ -364,10 +272,7 @@
             font-size: 1em;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
 
         .btn-submit {
             background-color: var(--verde-agua);
@@ -381,10 +286,7 @@
             transition: background-color 0.3s;
             width: 100%;
         }
-
-        .btn-submit:hover {
-            background-color: #38c4b7;
-        }
+        .btn-submit:hover { background-color: #38c4b7; }
 
         /* Rodapé */
         footer {
@@ -395,66 +297,23 @@
         }
         
         /* ==================================== */
-        /* RESPONSIVIDADE OTIMIZADA (MOBILE FIRST) */
+        /* RESPONSIVIDADE (MOBILE FIRST) */
         /* ==================================== */
         @media (max-width: 768px) {
-            
-            /* Mostra o ícone de hambúrguer e esconde o menu padrão */
-            nav {
-                display: none; /* Esconde o menu de navegação padrão */
-            }
-            .hamburger-menu {
-                display: block; /* Mostra o ícone de hambúrguer */
-            }
-            .btn-cta {
-                display: none; /* Esconde o botão CTA do header */
-            }
-            /* Mostra o botão CTA dentro do menu lateral em mobile */
-            .sidenav .btn-cta-mobile {
-                display: inline-block; 
-            }
+            nav { display: none; }
+            .hamburger-menu { display: block; }
+            .btn-cta { display: none; }
+            .sidenav .btn-cta-mobile { display: inline-block; }
+            header .navbar { justify-content: space-between; flex-direction: row; }
+            header .logo-img img { height: 35px; }
 
-            /* Ajustes do Header para mobile */
-            header .navbar {
-                justify-content: space-between; /* Mantém logo e hambúrguer nas pontas */
-                align-items: center;
-                flex-direction: row; /* Volta a ser linha para logo e hambúrguer */
-            }
-            header .logo-img img { 
-                height: 35px; /* Ligeiramente menor para mobile */
-            }
-
-
-            /* Hero Section */
-            #hero {
-                padding: 60px 20px; 
-            }
-            #hero h1 {
-                font-size: 2.2em; 
-            }
-            #hero p {
-                font-size: 1em;
-            }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; line-height: 50px; }
             
-            /* Seções Gerais e Títulos */
-            #servicos, #sobre, #avaliacoes, #contato {
-                padding: 50px 0; 
-            }
-            h2 {
-                font-size: 2em !important; 
-                margin-bottom: 30px !important;
-            }
-            
-            /* Serviços e Avaliações (Grid em Coluna Única) */
-            .servicos-grid,
-            .avaliacoes-grid {
-                grid-template-columns: 1fr; 
-            }
-            
-            /* Contato */
-            .form-contato {
-                padding: 30px 20px; 
-            }
+            #hero { padding: 60px 20px; }
+            #hero h1 { font-size: 2.2em; }
+            #servicos, #sobre, #avaliacoes, #contato { padding: 50px 0; }
+            h2 { font-size: 2em !important; margin-bottom: 30px !important; }
+            .servicos-grid, .avaliacoes-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -473,7 +332,7 @@
     <header>
         <div class="container navbar">
             <a href="#" class="logo-img">
-                <img src="images/logo-parenti.png" alt="Parenti Saúde Logo">
+                <img src="PS.png" alt="Parenti Saúde Logo">
             </a>
             
             <span class="hamburger-menu" onclick="openNav()">&#9776;</span>
@@ -483,7 +342,7 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#avaliacoes">Avaliações</a></li> 
+                    <li><a href="#avaliacoes">Avaliações</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -623,14 +482,18 @@
         </div>
     </footer>
 
+    <a href="https://wa.me/SEU_NUMERO_WHATSAPP?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20Home%20Care." 
+    target="_blank" 
+    class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         function openNav() {
-            // Define a largura para 250px para mostrar o menu
             document.getElementById("mySidenav").style.width = "250px"; 
         }
 
         function closeNav() {
-            // Define a largura para 0 para esconder o menu
             document.getElementById("mySidenav").style.width = "0";
         }
 
