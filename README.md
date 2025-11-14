@@ -1,2 +1,387 @@
-# Parente-Saude
-Somos uma empresa de Home Care que oferece atendimento residencial completo. Contamos com uma equipe multiprofissional qualificada, incluindo: Enfermagem, Medicina, Fisioterapia, Fonoaudiologia, Nutrição e outras especialidades.  Garantimos um cuidado integral, humanizado e de alta qualidade no conforto do seu lar.
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parenti Saúde | Home Care Profissional e Acolhedor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Paleta de Cores */
+        :root {
+            --roxo-principal: #6A0DAD; /* Roxo (Destaque/CTAs) */
+            --verde-agua: #40E0D0; /* Verde-Água (Acolhimento/Ícones) */
+            --grafite-escuro: #333333; /* Texto */
+            --grafite-claro: #666666; /* Texto Secundário */
+            --fundo-claro: #F9F9F9; /* Fundo de Seção */
+            --branco: #FFFFFF;
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--grafite-escuro);
+            line-height: 1.6;
+            background-color: var(--branco);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--roxo-principal);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 1. Cabeçalho (Header) */
+        header {
+            background: var(--branco);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--roxo-principal);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--grafite-claro);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--roxo-principal);
+        }
+        
+        /* Botão CTA Principal */
+        .btn-cta {
+            background-color: var(--roxo-principal);
+            color: var(--branco);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background-color: #550099; /* Tom mais escuro do roxo */
+        }
+
+        /* 2. Hero Section */
+        #hero {
+            background: linear-gradient(rgba(106, 13, 173, 0.7), rgba(64, 224, 208, 0.7)), url('https://via.placeholder.com/1600x600?text=Cuidado+Home+Care+Profissional') no-repeat center center/cover;
+            color: var(--branco);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--branco);
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 3. Seção de Serviços */
+        #servicos {
+            padding: 80px 0;
+            background-color: var(--fundo-claro);
+            text-align: center;
+        }
+
+        #servicos h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background: var(--branco);
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .servico-card i {
+            font-size: 2.5em;
+            color: var(--verde-agua);
+            margin-bottom: 15px;
+        }
+
+        .servico-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--grafite-escuro);
+        }
+
+        /* 4. Sobre Nós */
+        #sobre {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #sobre h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        #sobre p {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--grafite-claro);
+        }
+
+        /* 5. Contato */
+        #contato {
+            padding: 80px 0;
+            background-color: var(--roxo-principal);
+            color: var(--branco);
+            text-align: center;
+        }
+
+        #contato h2 {
+            color: var(--verde-agua);
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .form-contato {
+            background: var(--branco);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: var(--grafite-escuro);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            background-color: var(--verde-agua);
+            color: var(--grafite-escuro);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: 700;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #38c4b7;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--grafite-escuro);
+            color: var(--fundo-claro);
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* Responsividade (Ajustes para telas menores) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            nav ul {
+                padding: 15px 0 5px;
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            #hero h1 {
+                font-size: 2.5em;
+            }
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo">Parenti Saúde</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="#contato" class="btn-cta" style="margin-left: 20px;">(24h) Fale Conosco</a>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Cuidado Profissional no Conforto do Seu Lar.</h1>
+            <p>A Parenti Saúde leva atendimento home care de excelência, com equipe multiprofissional dedicada à saúde e bem-estar da sua família.</p>
+            <a href="#contato" class="btn-cta">💜 Agende Sua Avaliação Gratuita</a>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container">
+            <h2>Nossa Equipe Multiprofissional</h2>
+            <div class="servicos-grid">
+                
+                <div class="servico-card">
+                    <i class="fas fa-user-nurse"></i>
+                    <h3>Enfermagem</h3>
+                    <p>Cuidados 24h, procedimentos, administração de medicamentos com total segurança.</p>
+                </div>
+
+                <div class="servico-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>Medicina</h3>
+                    <p>Acompanhamento médico especializado e humanizado no domicílio.</p>
+                </div>
+
+                <div class="servico-card">
+                    <i class="fas fa-hand-holding-medical"></i>
+                    <h3>Fisioterapia</h3>
+                    <p>Reabilitação motora e respiratória personalizada para melhor recuperação.</p>
+                </div>
+
+                <div class="servico-card">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Nutrição</h3>
+                    <p>Orientação dietética focada na recuperação e qualidade de vida do paciente.</p>
+                </div>
+
+                <div class="servico-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Fonoaudiologia</h3>
+                    <p>Reabilitação da fala, deglutição e comunicação.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2>Nossa Missão</h2>
+            <p>Parenti Saúde nasceu com o propósito de humanizar o cuidado, unindo a alta tecnologia e a expertise de uma equipe completa à familiaridade do lar. Acreditamos que o ambiente doméstico é o melhor lugar para promover a recuperação e o bem-estar com dignidade e afeto.</p>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2>Solicite Seu Orçamento</h2>
+            <form class="form-contato" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone (WhatsApp)</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem / Tipo de Cuidado Necessário</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Solicitação</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Parenti Saúde Home Care. Todos os direitos reservados. | Cuidado com Confiança e Acolhimento.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
