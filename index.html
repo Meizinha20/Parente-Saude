@@ -60,12 +60,19 @@
             align-items: center;
         }
 
-        /* LOGO DE IMAGEM */
-        .logo { display: none; }
-        .logo-img img {
-            height: 40px; 
-            width: auto;
-            vertical-align: middle;
+        /* ESTILOS PARA O LOGO DE TEXTO (Substituindo a Imagem) */
+        .logo-img { display: none; } /* Oculta o antigo logo de imagem */
+        .logo {
+            display: block !important; /* Garante que o texto apareça */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em; /* Tamanho do título */
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--roxo-principal); /* Cor principal */
+            transition: color 0.3s;
+        }
+        .logo:hover {
+            color: var(--verde-agua);
         }
 
         /* Estilos de Navegação (Desktop) */
@@ -305,7 +312,8 @@
             .btn-cta { display: none; }
             .sidenav .btn-cta-mobile { display: inline-block; }
             header .navbar { justify-content: space-between; flex-direction: row; }
-            header .logo-img img { height: 35px; }
+            /* Ajuste o tamanho do logo de texto no mobile */
+            .logo { font-size: 1.2em !important; }
 
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; line-height: 50px; }
             
@@ -331,8 +339,8 @@
 
     <header>
         <div class="container navbar">
-            <a href="#" class="logo-img">
-                <img src="PS.png" alt="Parenti Saúde Logo">
+            <a href="#" class="logo">
+                Parente Saúde
             </a>
             
             <span class="hamburger-menu" onclick="openNav()">&#9776;</span>
@@ -482,7 +490,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/SEU_NUMERO_WHATSAPP?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20Home%20Care." 
+    <a href="https://wa.me/5511937643905?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20Home%20Care." 
     target="_blank" 
     class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
